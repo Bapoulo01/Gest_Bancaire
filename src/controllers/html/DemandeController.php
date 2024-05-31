@@ -1,7 +1,7 @@
 <?php
 require_once("../src/models/DemandeModel.php");
 
-class ApiController{
+class DemandeController{
     private DemandeModel $demandeModel;
 
 public function __construct(){
@@ -16,7 +16,7 @@ public function load(){
 
 private function listerDemande(){
     $datas = $this ->demandeModel->findAll();
-    echo json_encode($datas);
+    require_once("../views/demandes/liste.demande.html.php");
 
 }
 

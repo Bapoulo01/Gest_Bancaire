@@ -4,8 +4,8 @@ abstract class  Model
 {
     protected string $table;
     protected string $class;
-    protected string $columns;
-    protected string $values;
+    // protected string $columns;
+    // protected string $values;
 
     public function findAll():array
     {
