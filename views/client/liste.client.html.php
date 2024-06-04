@@ -23,38 +23,21 @@
     </header>
     <main>
     <div class="container-fluid col-12 d-flex vh-100 ">
-            <div class="container col-2  shadow">
-                <!-- <img src="Images/logo.jpg" class="img-fluid col-7" alt=""> -->
-                <p class="fw-light fs-6 mt-3 mb-3">-MENU</p>
-                <ul class="list-group">
-                    <li class="list-group-item ">
-                        <a href="<?=WEBROOT?>/?ressource=html&controller=demande" class="list-group-item list-group-item-action active d-flex align-item-center"> 
-                            Demande
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="<?=WEBROOT?>/?ressource=html&controller=compte" class="list-group-item list-group-item-action d-flex align-item-center"><span
-                                class="material-symbols-outlined px-2"> checkbook </span>Compte</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="<?=WEBROOT?>/?ressource=html&controller=client" class="list-group-item list-group-item-action d-flex align-item-center"><span
-                                class="material-symbols-outlined px-2"> checkbook </span>Client</a>
-                    </li>
-                </ul>
-
-            </div>
-
+        <?php
+            require_once("../views/partial/menu.php");
+          ?>        
             <div class="container col-10 border">
                 <div class="container">
             <div class="container d-flex align-items-center justify-content-between rounded-2 col-12 mt-3 mb-3  rounded">
                 <div class="container rounded-3 col-12  mt-5  shadow p-1  rounded">
-                    <table class="table">
+                    <table class="table text-centre">
                         <thead class="table-info">
                             <tr>
                                 <th scope="col">Prenom</th>
                                 <th scope="col">Nom</th>
                                 <th scope="col">Tel</th>
                                 <th scope="col">Email</th>
+                                <th scope="col">Autre</th>
                             </tr>
                         </thead>
                         <tbody id="tBody">
@@ -65,6 +48,9 @@
                                 <td class="col"><?=$data->nom?></td>
                                 <td class="col"><?=$data->telephone?></td>
                                 <td class="col"><?=$data->email?></td>
+                                <td class="col">
+                                    <button type="button" class="btn btn-primary">Voir transaction</button>
+                                </td>
                             </tr>             
                         <?php endforeach;?>
                         </tbody>
