@@ -1,4 +1,4 @@
-<!-- <!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -14,6 +14,7 @@
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="<?=WEBROOT?>/css/style.css">
 </head>
 
 <body>
@@ -27,13 +28,13 @@
                 <p class="fw-light fs-6 mt-3 mb-3">-MENU</p>
                 <ul class="list-group">
                     <li class="list-group-item ">
-                        <a href="<?=WEBROOT?>/ressource=html&?controller=demande" class="list-group-item list-group-item-action active d-flex align-item-center"> 
+                        <a href="<?=WEBROOT?>/?ressource=html&controller=demande" class="list-group-item list-group-item-action active d-flex align-item-center"> 
                             Demande
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="<?=WEBROOT?>/ressource=html&?controller=compte" class="list-group-item list-group-item-action d-flex align-item-center"><span
-                            class="material-symbols-outlined px-2"> checkbook </span>Compte</a>
+                        <a href="<?=WEBROOT?>/?ressource=html&controller=compte" class="list-group-item list-group-item-action d-flex align-item-center"><span
+                                class="material-symbols-outlined px-2"> checkbook </span>Compte</a>
                     </li>
                     <li class="list-group-item">
                         <a href="<?=WEBROOT?>/?ressource=html&controller=client" class="list-group-item list-group-item-action d-flex align-item-center"><span
@@ -44,33 +45,52 @@
             </div>
 
             <div class="container col-10 border">
+                <div class="container col-11 mt-3 border shadow d-flex align-items-center justify-content-around p-3 rounded">
+                    <div class="col-md-3 d-flex align-items-center">
+                        <label for="inputCity" class="form-label  mx-2">Tel</label>
+                        <input type="text" class="form-control" id="inputTel">
+                    </div>
+                    <div class="col-md-4 d-flex d-flex align-items-center">
+                        <label for="inputState" class="form-label  mx-2">Type</label>
+                        <select id="inpuType" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <label for="inputState" class="form-label mx-2">Statut</label>
+                        <select id="inputStatut" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="container">
             <div class="container d-flex align-items-center justify-content-between rounded-2 col-12 mt-3 mb-3  rounded">
                 <div class="container rounded-3 col-12  mt-5  shadow p-1  rounded">
                     <table class="table">
                         <thead class="table-info">
-                        <tr>
-                                <th scope="col">Image</th>
-                                <th scope="col">Nom</th>
-                                <th scope="col">Prenom</th>
-                                <th scope="col">email</th>
-                                <th scope="col">Genre</th>
-                                <th scope="col">Telephone</th>
-                                <th scope="col">Actions</th>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Client</th>
+                                <th scope="col">Tel</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Status</th>
                             </tr>
                         </thead>
                         <tbody id="tBody">
 
-                        <?php foreach ($datas as $data):?>                            <tr>
-                                <td class="col">Image</td> 
-                                <td class="col">Nom</td>
-                                <td class="col">Prenom</td>
-                                <td class="col">Email</td>
-                                <td class="col">tel</td>
-                                <td class="col">genre</td>
-                                <td class="col">Action</td>
+                        <?php foreach ($datas as $data):?>
+                            <tr>
+                                <td class="col"><?=$data->dated?></td> 
+                                <td class="col"><?=$data->prenom." ".$data->nom?></td>
+                                <td class="col"><?=$data->telephone?></td>
+                                <td class="col"><?=$data->email?></td>
+                                <td class="col"><?=$data->libtc?></td>
+                                <td class="col">Status</td>
                             </tr>             
-                        <?php endforeach;?>                        
+                        <?php endforeach;?>
                         </tbody>
                     </table>
                 </div>
@@ -91,8 +111,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-        <script src="<?=WEBROOT?>/js/compte.js"></script>
+    <!-- <script src="script.js"></script> -->
 
+    <script src="<?=WEBROOT?>/js/demande.js"></script>
 </body>
 
-</html
+</html>
+
