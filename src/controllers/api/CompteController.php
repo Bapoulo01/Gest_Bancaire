@@ -16,7 +16,7 @@ public function load(){
 
 private function listerCompte(){
     $datas = $this ->compteModel->findAllCompte();
-    require_once("../views/compte/liste.compte.html.php");
+   echo json_encode($datas);
 
 }
 

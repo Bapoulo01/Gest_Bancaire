@@ -1,19 +1,19 @@
 const WEBURL="http://localhost:8888";
 const inputTel=document.querySelector("#inputTel")
-let client=[];
+let transaction=[];
 
 document.addEventListener("DOMContentLoaded",async(event)=>{
-    let datas = await  findAllClient();
-    client = [...datas];
+    let datas = await findAllTransaction();
+    transaction = [...datas];
     inputTel.addEventListener("input",function(){
-        console.log(client);
+        console.log(transaction);
     })
 })
 
 
 
-async function findAllClient(){
-    let response = await fetch(`${WEBURL}/?ressource=api&controller=client`);    //fetch fct async
+async function findAllTransaction(){
+    let response = await fetch(`${WEBURL}/?ressource=api&controller=transaction`);    //fetch fct async
     let datas = await response.json();
     return datas;
 }

@@ -21,6 +21,4 @@ private function listerClient(){
 }
 
 
-
-
 }

@@ -3,7 +3,7 @@
 
 <head>
     <title>Title</title>
-    <!-- Required meta tags
+    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="">
@@ -28,49 +28,34 @@
 
 
             <div class="container col-10 border">
-            <div class="container col-11 mt-3 border shadow d-flex align-items-center justify-content-around p-3 rounded">
-                    <div class="col-md-3 d-flex align-items-center mx-2">
-                        <label for="inputCity" class="form-label  mx-2">Date</label>
-                        <input type="date" class="form-control" id="inputDate">
+                <div class="container col-8 mt-3 border shadow d-flex align-items-center  p-3 rounded">
+                    <div class="col-md-5 d-flex align-items-center">
+                        <label for="inputCity" class="form-label  mx-2">Tel</label>
+                        <input type="text" class="form-control" id="inputTel">
                     </div>
-                    <div class="col-md-4 d-flex d-flex align-items-center">
-                        <label for="inputState" class="form-label  mx-2">Type</label>
-                        <select id="inputType" class="form-select">
-                            <option selected>All</option>
-                            <option>Compte Courant</option>
-                            <option>Compte Épargne</option>
-                            <option>Compte Courant</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3 d-flex align-items-center">
-                        <label for="inputCity" class="form-label  mx-2">Etat</label>
-                        <select id="inputEtat" class="form-select">
-                            <option selected>All</option>
-                            <option>Actif</option>
-                            <option>Inactif</option>
-                        </select>
+                    <div class="col-md-5 d-flex align-items-center mx-3">
+                        <label for="inputCity" class="form-label  mx-2">Tel</label>
+                        <input type="text" class="form-control" id="inputTel">
                     </div>
                 </div>
                 <div class="container">
             <div class="container d-flex align-items-center justify-content-between rounded-2 col-12 mt-3 mb-3  rounded">
                 <div class="container rounded-3 col-12  mt-5  shadow p-1  rounded">
-                    <table class="table col-12">
+                    <table class="table">
                         <thead class="table-info">
                             <tr>
-                                <th scope="col">N°</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Prenom</th>
-                                <th scope="col">Nom</th>
-                                <th scope="col">Agence</th>
-                                <th scope="col">Solde</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Taux</th>
-                                <th scope="col">Frais</th>
-                                <th scope="col">etat</th>
+                                <th scope="col">id</th>
+                                <th scope="col">Libelle</th>
                             </tr>
                         </thead>
                         <tbody id="tBody">
 
+                        <?php foreach ($datas as $data):?>
+                            <tr>
+                                <td class="col"><?=$data->idp?></td>
+                                <td class="col"><?=$data->libp?></td>
+                            </tr>             
+                        <?php endforeach;?>                        
                         </tbody>
                     </table>
                 </div>
@@ -91,7 +76,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-        <script src="<?=WEBROOT?>/js/compte.js"></script>
+        <script src="<?=WEBROOT?>/js/transaction.js"></script>
 
 </body>
 

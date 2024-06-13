@@ -27,6 +27,26 @@
             require_once("../views/partial/menu.php");
           ?>        
             <div class="container col-10 border">
+            <div class="container col-11 mt-3 border shadow d-flex align-items-center justify-content-around p-3 rounded">
+                    <div class="col-md-3 d-flex align-items-center">
+                        <label for="inputCity" class="form-label  mx-2">Tel</label>
+                        <input type="text" class="form-control" id="inputTel">
+                    </div>
+                    <div class="col-md-4 d-flex d-flex align-items-center">
+                        <label for="inputState" class="form-label  mx-2">Type</label>
+                        <select id="inpuType" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <label for="inputState" class="form-label mx-2">Statut</label>
+                        <select id="inputStatut" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="container">
             <div class="container d-flex align-items-center justify-content-between rounded-2 col-12 mt-3 mb-3  rounded">
                 <div class="container rounded-3 col-12  mt-5  shadow p-1  rounded">

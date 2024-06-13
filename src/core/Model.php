@@ -2,8 +2,6 @@
 
 abstract class  Model
 {
-    protected string $table;
-    protected string $class;
 
     public function findAll()
     { 

@@ -1,6 +1,6 @@
 const WEBURL="http://localhost:8888";
 const inputTel=document.querySelector("#inputTel")
-let client=[];
+let agence=[];
 
 document.addEventListener("DOMContentLoaded",async(event)=>{
     let datas = await  findAllClient();
