@@ -3,14 +3,16 @@ const inputTel=document.querySelector("#inputTel")
 const tBody=document.getElementById("tBody");
 const inputType=document.getElementById("inputType");
 const inputStatut=document.getElementById("inputStatut");
-const pagination = document.getElementById("pagination");
+const paginationDemande = document.getElementById("paginationDemande");
+const nombreElementPage=1;
 let demandes=[];
 
 document.addEventListener("DOMContentLoaded",async(event)=>{
     let datas = await findAllDemandeWithClient();
     demandes = [...datas];
 
-    init()
+    init();
+    generatePagination(getDatasPaginate(demandes,1,nombreElementPage));
 
 })
 
@@ -105,9 +107,39 @@ function filterDemandeByStatut(statut) {
     return demandes;
 }
 
-
-
-function btnview(tr){
- tr.lastElementChild.document.querySelector('button').hidden=false
-    console.log(tr.lastElementChild);
+//fonction pour la pagination
+function getDatasPaginate(demandes,start,nombreElementPage){
+    let firstPosition=(start-1)*nombreElementPage
+    let lastPosition=firstPosition+nombreElementPage
+    return {
+        datas:demandes.slice(firstPosition,lastPosition),
+        pages:Math.ceil(demandes.length/nombreElementPage)
+        
+    }
 }
+
+//fonction pour generer pagination
+function generatePagination(datasPaginate){  
+    let {datas,pages}=datasPaginate
+    let paginateHtml = ""
+    for (let i = 1; i <= pages; i++) {
+        paginateHtml += `<li class="page-item  ${i==1?'active':''}">
+        <a class="page-link" href="#" data-pagenumber="${i}">${i}</a></li>`
+    }
+    paginationDemande.innerHTML=paginateHtml
+    tBody.innerHTML = generateTBody(datas);
+    const itemsLi=paginationDemande.querySelectorAll(".page-item") 
+    itemsLi.forEach((item)=>{
+        item.addEventListener("click",(e)=>{ 
+        let{datas}=getDatasPaginate(demandes,parseInt(item.firstElementChild.dataset.pagenumber),nombreElementPage);
+        console.log(item.firstElementChild.dataset.pagenumber);
+        tBody.innerHTML = generateTBody(datas);
+    })
+
+})
+
+}
+// function btnview(tr){
+//  tr.lastElementChild.document.querySelector('button').hidden=false
+//     console.log(tr.lastElementChild);
+// }

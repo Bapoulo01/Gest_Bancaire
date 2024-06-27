@@ -104,13 +104,13 @@
                     </table>
                     <div class=" container col-12 d-flex align-items-center justify-content-center mt-3">
                         <nav aria-label="Page navigation example">
-                        <ul class="pagination" id="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
+                            <ul class="pagination" id="paginationDemande">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
                         </nav>   
                     </div>                
                 </div>          

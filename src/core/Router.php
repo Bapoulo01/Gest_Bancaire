@@ -1,6 +1,6 @@
 <?php 
 
-class Routeur 
+class Router 
 {
     public static function run(){
         if (isset($_REQUEST["ressource"])) {
