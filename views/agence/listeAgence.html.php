@@ -26,8 +26,6 @@
             require_once("../views/partial/menu.php");
           ?>
 
-
-
             <div class="container col-10 border">
                 <div class="container col-8 mt-3 border shadow d-flex align-items-center  p-3 rounded">
                     <div class="col-md-5 d-flex align-items-center">

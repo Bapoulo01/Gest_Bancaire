@@ -1,12 +1,7 @@
 <?php
     define("WEBROOT","http://localhost:8888");
+    require_once("../src/core/Router.php");
 
-    if (isset($_REQUEST["ressource"])) {
-        $ressource=$_REQUEST["ressource"];
-        if (isset($_REQUEST["controller"])) {
-            $controllerClass=ucfirst($_REQUEST["controller"])."Controller"; 
-            require_once("../src/controllers/$ressource/$controllerClass.php");
-            $demande=new $controllerClass();
-        }
-    }
+    Router::run();
+
 

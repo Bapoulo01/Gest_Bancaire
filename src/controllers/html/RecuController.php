@@ -1,7 +1,9 @@
 <?php
 require_once("../src/models/RecuModel.php");
+require_once("../src/core/Controller.php");
 
-class RecuController{
+
+class RecuController extends Controller{
     private RecuModel $recuModel;
 
 public function __construct(){
@@ -15,8 +17,9 @@ public function load(){
 }
 
 private function listerRecu(){
-    $datas = $this ->recuModel-> findAll();
-    require_once("../views/recu/listeRecu.html.php");
+    parent::rendorView("recu/listeRecu",["datas"=>$this ->recuModel-> findAll()]);
+    // $datas = $this ->recuModel-> findAll();
+    // require_once("../views/recu/listeRecu.html.php");
 
 }
 

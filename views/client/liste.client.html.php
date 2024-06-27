@@ -23,10 +23,8 @@
     </header>
     <main>
     <div class="container-fluid col-12 d-flex vh-100 ">
-        <?php
-            require_once("../views/partial/menu.php");
-          ?>        
-            <div class="container col-10 border">
+        
+            <div class="container col-12 ">
             <div class="container col-11 mt-3 border shadow d-flex align-items-center justify-content-around p-3 rounded">
                     <div class="col-md-3 d-flex align-items-center">
                         <label for="inputCity" class="form-label  mx-2">Tel</label>

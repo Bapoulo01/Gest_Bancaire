@@ -1,7 +1,9 @@
 <?php
 require_once("../src/models/ProfilModel.php");
+require_once("../src/core/Controller.php");
 
-class ProfilController{
+
+class ProfilController extends Controller{
     private ProfilModel $profilModel;
 
 public function __construct(){
@@ -15,8 +17,9 @@ public function load(){
 }
 
 private function listerProfil(){
-    $datas = $this ->profilModel-> findAll();
-    require_once("../views/profil/listeProfil.html.php");
+    parent::rendorView("profil/listeProfil",["datas"=>$this ->profilModel-> findAll()]);
+    // $datas = $this ->profilModel-> findAll();
+    // require_once("../views/profil/listeProfil.html.php");
 
 }
 

@@ -28,10 +28,7 @@ abstract class  Model
         return $result->fetch(PDO::FETCH_CLASS,$calledClass);
     }
 
-
-
-
-    
+  
     protected function openConnexion()
     {
         return new PDO(

@@ -1,7 +1,8 @@
 <?php
 require_once("../src/models/CompteModel.php");
+require_once("../src/core/Controller.php");
 
-class CompteController{
+class CompteController extends controller{
     private CompteModel $compteModel;
 
 public function __construct(){
@@ -15,8 +16,9 @@ public function load(){
 }
 
 private function listerCompte(){
-    $datas = $this ->compteModel->findAllCompte();
-    require_once("../views/compte/liste.compte.html.php");
+    parent::rendorView("compte/liste.compte",["datas"=>$this ->compteModel->findAllCompte()]);
+    // $datas = $this ->compteModel->findAllCompte();
+    // require_once("../views/compte/liste.compte.html.php");
 
 }
 

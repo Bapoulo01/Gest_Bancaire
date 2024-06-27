@@ -1,6 +1,7 @@
 <?php
 require_once("../src/models/AgenceModel.php");
 
+
 class AgenceController{
     private AgenceModel $agenceModel;
 
@@ -17,6 +18,7 @@ public function load(){
 private function listerAgence(){
     $datas = $this ->agenceModel-> findAll();
     echo json_encode($datas);
+    
 
 }
 
