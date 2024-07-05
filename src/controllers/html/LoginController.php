@@ -1,15 +1,15 @@
 <?php
 require_once("../src/models/LoginModel.php");
 require_once("../src/core/Controller.php");
-require_once("../src/core/Validator.php");
+
 
 class LoginController extends Controller {
     private LoginModel $loginModel;
 
 public function __construct(){
+    parent::__construct();
     $this->layout="connexion"; 
-    session_start();
-    $this ->loginModel=new LoginModel;
+    $this ->loginModel = new LoginModel;
     $this->load();
 
 }
@@ -20,6 +20,9 @@ public function load(){
             $this->login();
         }elseif ($_REQUEST["action"]=="show-form"){
             $this->showForm();
+        }
+        elseif ($_REQUEST["action"]=="logout"){
+            Session::close();
         }
     }
     else{
@@ -32,6 +35,20 @@ public function showForm(){
     parent::rendorView("login/login");
 }
 
+public function redirectAfterConnect(){
+    switch (Autorisation::getRole()) {
+
+        case 'Client':
+            
+            header("Location:".WEBROOT."/?ressource=html&controller=demande");
+        exit;
+        
+        default:
+            # code...
+            break;
+    }
+}
+
 private function login(){
     if(!Validator::isEmpty("email","login est obligatoire")){
         Validator::isEmail("email");
@@ -40,6 +57,10 @@ private function login(){
     if (Validator::validate()) {
         $connect= $this->loginModel->connexion($_POST["email"],$_POST["pwd"]);
         if ($connect!=false) {
+            Session::set("userConnect",$connect);
+            $this->redirectAfterConnect();
+            // var_dump(Autorisation::getRole());
+            // var_dump(Autorisation::hasRole("Client"));
 
         }else{
             #Erreur not Exit
@@ -51,7 +72,7 @@ private function login(){
 
     }
 
-    var_dump($connect);
+    // var_dump($connect);
     // parent::rendorView("login/login");
     // $datas = $this ->demandeModel-> findAllWithClient();
     // require_once("../views/demande/liste.demande.html.php");

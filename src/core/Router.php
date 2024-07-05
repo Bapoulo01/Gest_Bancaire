@@ -19,6 +19,7 @@ class Router
         }
         else{
             require_once "../src/Controllers/html/LoginController.php";
+            $class = new LoginController();
         }
     }
 }
