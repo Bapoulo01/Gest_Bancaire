@@ -18,22 +18,7 @@
 </head>
 
 <body>
-    <header>
-        <!-- place navbar here -->
-    </header>
-    <main>
-    <div class="container-fluid col-12 d-flex vh-100 ">
-            <?php
-                require_once("../views/partial/menu.php");
-            ?>       
-
-        <div class="container col-10 border">
-            <?php 
-                echo$contentForView;
-            ?>
-        </div>
-    </div>
-    </main>
+        <?= $contentForView ?>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -45,7 +30,7 @@
         crossorigin="anonymous"></script>
     <!-- <script src="script.js"></script> -->
 
-    <script src="<?=WEBROOT?>/js/demande.js"></script>
+    <script src="<?=WEBROOT?>/js/connexion.js"></script>
 </body>
 
 </html>

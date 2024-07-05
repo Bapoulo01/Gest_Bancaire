@@ -7,10 +7,18 @@ class Router
             $ressource = $_REQUEST["ressource"];
             if (isset($_REQUEST["controller"])) {
                 $controllerClass = ucfirst($_REQUEST["controller"]) . "Controller";
-                require_once "../src/Controllers/$ressource/$controllerClass.php";
-                $class = new $controllerClass();
-            }
-        
+                $fileController="../src/Controllers/$ressource/$controllerClass.php";
+                if (file_exists($fileController)) {
+                    require_once $fileController;
+                    $class = new $controllerClass();
+                }else{
+                    require_once "../src/Controllers/html/ErreurController.php";
+                    $class = new ErreurController();
+                }
+            }   
+        }
+        else{
+            require_once "../src/Controllers/html/LoginController.php";
         }
     }
 }

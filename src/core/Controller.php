@@ -13,7 +13,7 @@ public function rendorview(string $view,array $datas=[]):void{
 }
 
 public function rendorJson(array $datas){
-    echo json_encode($datas);
+   echo json_encode($datas);
 
 }
 
